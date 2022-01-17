@@ -52,6 +52,12 @@ class DirectImageGuide():
     n_steps: (positive integer) steps to run
     returns: the number of steps run
     """
+    print('\n')
+    print(f'Running steps')
+    print(f'prompts: {prompts}')
+    print(f'interp_prompts: {interp_prompts}')
+    print(f'loss_augs: {loss_augs}')
+    print('\n')
     for i in tqdm(range(n_steps)):
       self.update(i+i_offset, i+skipped_steps)
       losses = self.train(i+skipped_steps,
